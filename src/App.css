@@ -1,38 +1,94 @@
+* {
+  box-sizing: border-box;
+  background-color: rgb(244, 244, 244);
+  color: #333;
+  font-size: 10px;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  margin: 0;
+  padding: 0;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1000px;
+  padding: 40px;
+}
+.title {
+  font-size: 4.4rem;
+  font-weight: bold;
+}
+.subtitle {
+  font-size: 1.5rem;
+}
+.form {
+  display: grid;
+}
+.label {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.input {
+  font-size: 1.6rem;
+  padding: 0.5rem 2rem;
+  background-color: white;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  border-width: 0px;
+  width: 100%;
+}
+
+.button {
+  background-color: rgba(0, 0, 0, 0.75);
   color: white;
+  /* padding: 1rem 2rem; */
+  height: 44px;
+  width: 100%;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.75);
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: background-color 250ms;
+}
+.button:hover {
+  background-color: rgba(0, 0, 0, 0.85);
 }
 
-.App-link {
-  color: #61dafb;
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.item {
+  width: 30%;
+  margin: 5px;
+  cursor: pointer;
+}
+/* image grid styles */
+.img-grid {
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 40px;
+}
+.img-wrap {
+  overflow: hidden;
+  height: 0;
+  padding: 50% 0;
+  /* padding controls height, will always be perfectly square regardless of width */
+  position: relative;
+  opacity: 0.8;
+  cursor: pointer;
+}
+.img-wrap img {
+  min-width: 100%;
+  min-height: 100%;
+  max-width: 150%;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
